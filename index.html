@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario de inscripción</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<form id="form">
+  <fieldset>
+    <legend>Datos personales</legend>dw
+    <div>
+      <label for="nombre">Nombre *</label>
+      <input id="nombre" name="nombre" required autocomplete="given-name">
+    </div>
+    <div>
+      <label for="apellido">Apellido *</label>
+      <input id="apellido" name="apellido" required autocomplete="family-name">
+    </div>
+    <div>
+      <label for="nacimiento">Fecha de nacimiento</label>
+      <input id="nacimiento" name="nacimiento" type="date">
+    </div>
+    <div>
+      <label for="documento">Cédula o pasaporte *</label>
+      <input id="documento" name="documento" required>
+    </div>
+  </fieldset>
+ 
+  <fieldset>
+    <legend>Contacto</legend>
+    <div>
+      <label for="correo">Correo electrónico *</label>
+      <input id="correo" name="correo" type="email" required autocomplete="email">
+    </div>
+    <div>
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" name="telefono" type="tel" autocomplete="tel">
+    </div>
+  </fieldset>
+ 
+  <fieldset>
+    <legend>Dirección</legend>
+    <div>
+      <label for="calle">Calle y número</label>
+      <input id="calle" name="calle" autocomplete="street-address">
+    </div>
+    <div>
+      <label for="ciudad">Ciudad</label>
+      <input id="ciudad" name="ciudad" autocomplete="address-level2">
+    </div>
+    <div>
+      <label for="pais">País</label>
+      <select id="pais" name="pais">
+        <option value="">Selecciona</option>
+        <option>República Dominicana</option>
+        <option>México</option>
+        <option>Colombia</option>
+        <option>España</option>
+        <option>Otro</option>
+      </select>
+    </div>
+  </fieldset>
+ 
+  <fieldset>
+    <legend>Preferencias</legend>
+ 
+    <fieldset>
+      <legend>Modalidad *</legend>
+      <label><input type="radio" name="modalidad" value="presencial" required> Presencial</label>
+      <label><input type="radio" name="modalidad" value="virtual"> Virtual</label>
+    </fieldset>
+ 
+    <fieldset>
+      <legend>Días disponibles</legend>
+      <label><input type="checkbox" name="dias" value="lun"> Lunes</label>
+      <label><input type="checkbox" name="dias" value="mie"> Miércoles</label>
+      <label><input type="checkbox" name="dias" value="vie"> Viernes</label>
+      <label><input type="checkbox" name="dias" value="sab"> Sábado</label>
+    </fieldset>
+ 
+    <div>
+      <label for="comentarios">Comentarios</label>
+      <textarea id="comentarios" name="comentarios"></textarea>
+    </div>
+ 
+    <label>
+      <input type="checkbox" name="acepto" required>
+      Acepto el tratamiento de mis datos *
+    </label>
+  </fieldset>
+ 
+  <button type="reset">Borrar todo</button>
+  <button type="submit">Enviar inscripción</button>
+</form>
+ 
+</body>
+</html>
+ 

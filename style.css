@@ -1,0 +1,158 @@
+:root {
+  --bg: #eef1f4;
+  --panel: #ffffff;
+  --ink: #1d2733;
+  --muted: #5b6776;
+  --line: #c9d1da;
+  --accent: #0f6b6b;
+  --accent-ink: #ffffff;
+  --focus: #f2a900;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131a21;
+    --panel: #1b242d;
+    --ink: #e7ecf1;
+    --muted: #9aa7b5;
+    --line: #33414f;
+    --accent: #4fb8b0;
+    --accent-ink: #0b1b1a;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px 48px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Secciones */
+fieldset {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  margin: 0 0 20px;
+  padding: 12px 20px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 8px;
+  margin-left: -8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* Subgrupos dentro de Preferencias */
+fieldset fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 8px 16px 14px;
+  background: transparent;
+  border-radius: 8px;
+  border-style: dashed;
+}
+
+fieldset fieldset legend {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Etiquetas y campos */
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+input:not([type="radio"], [type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Etiquetas con radio o casilla */
+label:has(input[type="radio"], input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-weight: 400;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--accent);
+}
+
+/* Foco visible */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+}
+
+/* Botones */
+button {
+  padding: 11px 20px;
+  font: inherit;
+  font-weight: 700;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+button[type="reset"] {
+  background: transparent;
+  color: var(--accent);
+}
+
+form > button {
+  margin-right: 12px;
+}
+
+/* Móvil */
+@media (max-width: 520px) {
+  fieldset {
+    padding: 8px 14px 16px;
+  }
+}
